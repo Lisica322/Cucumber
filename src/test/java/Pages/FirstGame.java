@@ -2,7 +2,7 @@ package Pages;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import io.cucumber.java.en.Given;
+import io.cucumber.java.en.And;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebElement;
 
@@ -16,7 +16,7 @@ public class FirstGame {
     private SelenideElement firstGamePrice = $x("//div[@class='game_purchase_action']//div[@class='game_purchase_price price']");
 
 
-    @Given("Selection of the first item")
+    @And("Selection of the first item")
     public void clickFirstGamePage() {
         firstPage.click();
         WebElement firstGamePageMenuElementPrice =
@@ -38,8 +38,6 @@ public class FirstGame {
 
         Assertions.assertEquals(firstGamePrice.getText(), actualPageHeaderText.trim(), "Не совпадает цена в разделе с ценой на старнице игры!");
     }
-
-
 
 
 }
